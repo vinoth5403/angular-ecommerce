@@ -8,6 +8,7 @@ import { SharedService } from './../shared.service';
 })
 
 export class ProductListComponent implements OnInit {
+
   @Input() products: any = [];
   singleProduct;
   isAdded;
@@ -15,38 +16,11 @@ export class ProductListComponent implements OnInit {
 
   constructor(private sharedService: SharedService) { }
 
-  ngOnInit(): void {
-    this.isAdded = [this.products.length];
-     this.sharedService.getSearchText().subscribe(searchText => this.searchTxt = searchText)
-    //this.isAdded.fill(false, 0, this.products.length);
-    
-    this.sharedService.getProducts().subscribe(data => {
-      if (data && data.length > 0) {
-  
-      } else {
-        this.products.map((item, index) => {
-          this.isAdded[index] = false;
-        });
-      }
-
-    });
+  ngOnInit() {
+    this.sharedService.getSearchText().subscribe(searchText => this.searchTxt = searchText);
   }
 
-
   addToCart(event, productId) {
-    // If Item is already added then display alert message
-    if (event.target.classList.contains('btn-success')) {
-      alert('This product is already added into cart.');
-      return false;
-    }
-
-    // Change button color to green
-    this.products.map((item, index) => {
-      if (item.id === productId) {
-        this.isAdded[index] = true;
-      }
-    })
-
     this.singleProduct = this.products.filter(product => {
       return product.id === productId;
     });

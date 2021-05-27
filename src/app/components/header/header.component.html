@@ -6,7 +6,7 @@
                 <strong>Product Store</strong>
             </a>
             <span>
-                <input [(ngModel)]="searchText" (ngModelChange)="log($event)" placeholder="search..">
+                <input [(ngModel)]="searchText" (ngModelChange)="changeText()" placeholder="search..">
             </span>
             <span class="cart-count">
                 <button type="button" class="btn btn-primary">

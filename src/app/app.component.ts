@@ -14,7 +14,6 @@ export class AppComponent {
   ngOnInit() {
     // Get all product list on component init
     this.mainService.getProducts().subscribe(data => {
-      console.log(data)
       this.products = data.products
     });
   }

@@ -9,6 +9,7 @@ import { SharedService } from './../../shared.service';
 export class HeaderComponent implements OnInit {
   cartProductCount: number = 0;
   searchText: string = '';
+  isToggleCart: boolean = false;
 
   constructor(private sharedService: SharedService) { }
 
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  log(event) {
+  changeText() {
     this.sharedService.setSearchText(this.searchText)
   }
 

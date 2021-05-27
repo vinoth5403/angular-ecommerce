@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject  } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -25,11 +24,6 @@ export class SharedService {
 
   getProducts(): Observable<any> {
     return this.products.asObservable();
-  }
-
-  setProducts(products) {
-    this.cartItems.push(...products);
-    this.products.next(products);
   }
 
   // Add single product to the cart
@@ -59,11 +53,11 @@ export class SharedService {
   // Calculate total price on item added to the cart
   getTotalPrice() {
     let total = 0;
-
     this.cartItems.map(item => {
       total += item.price;
     });
 
-    return total
+    return total;
   }
+
 }

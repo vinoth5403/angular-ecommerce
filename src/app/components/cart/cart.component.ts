@@ -8,16 +8,15 @@ import { SharedService } from './../../shared.service';
 })
 export class CartComponent implements OnInit {
 
-  
    cartItems;
    totalAmmount;
+   isToggleCart: boolean = false;
 
   constructor(
     private SharedService: SharedService
   ) { }
 
   ngOnInit() {
-
     this.SharedService.getProducts().subscribe(data => {
       this.cartItems = data;
       this.totalAmmount = this.SharedService.getTotalPrice();
