@@ -8,6 +8,7 @@ import {
 import { HeaderComponent } from './header.component';
 import { SharedService } from './../../shared.service';
 import { FormsModule } from '@angular/forms';
+import { of } from 'rxjs';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -39,8 +40,15 @@ describe('HeaderComponent', () => {
     //expect(component).toBeTruthy();
   });
 
-  it('should call change text method', () => {
-    component.changeText()
-  });
+  //it('should call change text method', () => {
+    //let txt = 'test';
+    //service.setSearchText(txt);
+    //spyOn(service,'setSearchText');
+    //component.changeText();
+    
+    //expect(component.changeText).toHaveBeenCalled();
+    //let spy = spyOn(service,'setSearchText').and.callThrough();
+    //(spy).toHaveBeenCalled();
+  //});
 
 });

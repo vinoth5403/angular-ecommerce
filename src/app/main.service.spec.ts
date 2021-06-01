@@ -36,10 +36,6 @@ describe('MainService', () => {
       }
     ];
 
-    // service.getProducts().subscribe((res) => {
-    //   expect(res).toEqual(mockVal);
-    // });
-
     spyOn(service, 'getProducts').and.returnValue(of(mockVal));
     //fixture.detectChanges();
     expect(service.getProducts).toHaveBeenCalled();
